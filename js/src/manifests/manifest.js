@@ -57,7 +57,11 @@
       });
 
       this.request.done(function(jsonLd) {
-        _this.jsonLd = jsonLd;
+          if (jsonLd['@graph']) {
+              _this.jsonLd = jsonLd['@graph'][0];
+          } else {
+              _this.jsonLd = jsonLd;
+          }
       });
     },
     initFromInfoJson: function(infoJsonUrl) {
@@ -75,7 +79,7 @@
       var _this = this;
       this.request = jQuery.Deferred();
       this.request.done(function(jsonLd) {
-        _this.jsonLd = jsonLd;
+          _this.jsonLd = jsonLd;
       });
       _this.request.resolve(manifestContent); // resolve immediately
     },
@@ -97,6 +101,8 @@
           service = canvas.thumbnail.service;
           if (service.hasOwnProperty('@context')) {
             version = $.Iiif.getVersionFromContext(service['@context']);
+          } else if (service.hasOwnProperty('@type')) {
+              version = $.Iiif.getVersionFromContext(service['@type']);
           }
           thumbnailUrl = $.Iiif.makeUriWithWidth(service['@id'], width, version);
         } else {
@@ -108,6 +114,8 @@
         service = resource['default'] ? resource['default'].service : resource.service;
         if (service.hasOwnProperty('@context')) {
           version = $.Iiif.getVersionFromContext(service['@context']);
+        } else if (service.hasOwnProperty('@type')) {
+            version = $.Iiif.getVersionFromContext(service['@type']);
         }
         thumbnailUrl = $.Iiif.makeUriWithWidth(service['@id'], width, version);
       }

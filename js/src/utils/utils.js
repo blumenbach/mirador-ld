@@ -50,6 +50,8 @@
       service = resource['default'] ? resource['default'].service : resource.service;
       if (service.hasOwnProperty('@context')) {
         version = $.Iiif.getVersionFromContext(service['@context']);
+      } else if (service.hasOwnProperty('@type')) {
+        version = $.Iiif.getVersionFromContext(service['@type']);
       }
       thumbnailUrl = $.Iiif.makeUriWithWidth(service['@id'], width, version);
     }
