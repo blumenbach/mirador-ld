@@ -143,7 +143,7 @@
 
       if (canvas && canvas.otherContent) {
         for (var i = 0; i < canvas.otherContent.length; i++) {
-          annotationsListUrls.push(canvas.otherContent[i]['@id']);
+          annotationsListUrls.push(canvas.otherContent[i].service);
         }
       }
       return annotationsListUrls;
