@@ -28,7 +28,7 @@
     "paper": "git://github.com/paperjs/paper.js.git#*",
     "spectrum": "git://github.com/bgrins/spectrum.git#*",
     "jquery-awesome-cursor": "git://github.com/jwarby/jquery-awesome-cursor.git#*",
-    "qtip2": "~2.2.1"
+    "qtip2": "https://github.com/qTip2/bower.git#~2.2.1"
   },
   "devDependencies": {
     "sinon-server": "http://sinonjs.org/releases/sinon-server-1.12.2.js",

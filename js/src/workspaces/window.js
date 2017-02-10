@@ -774,7 +774,7 @@
       //first look for manifest annotations
       var _this = this,
       urls = _this.manifest.getAnnotationsListUrls(_this.canvasID);
-
+    /*
       if (urls.length !== 0) {
         jQuery.each(urls, function(index, url) {
           jQuery.get(url, function(list) {
@@ -796,7 +796,7 @@
           });
         });
       }
-
+*/
       // next check endpoint
       if (this.annoEndpointAvailable) {
         var dfd = jQuery.Deferred(),

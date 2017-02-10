@@ -24,8 +24,8 @@
       dfd:       null,
       context_id: "None",
       collection_id: "None",
-      userid:    "test@mirador.org",
-      username:  "mirador-test",
+      userid:    "test",
+      username:  "pandora",
       annotationsList: [],        //OA list for Mirador use
       annotationsListCatch: null,  //internal list for module use
       windowID: null,
